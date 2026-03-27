@@ -210,41 +210,99 @@ footer {
     padding: 1rem;
   }
   
+  /* Titlu mai mare */
+  #appTitle {
+    font-size: clamp(3rem, 10vw, 4rem);
+  }
+  
+  .popcorn {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+  
+  /* Subtitle mai mare */
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Formular și etichete */
+  .finder-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  label {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  select {
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  /* Buton Play */
+  #playBtn {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.8rem;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  /* Card film */
   #movieInfo {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1rem;
+    padding: 1.2rem;
+    gap: 1rem;
   }
   
   #moviePoster {
     flex: 0 0 auto;
-    max-width: 200px;
+    max-width: 220px;
   }
   
-  #movieText {
-    text-align: center;
+  /* Titlu film */
+  #movieTitle {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
   }
   
-  .finder-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  
-  select, #playBtn {
-    width: 100%;
-    max-width: 250px;
-  }
-  
-  #likeBtn, #dislikeBtn {
-    padding: 0.5rem 1rem;
+  /* Descriere film */
+  #movieOverview {
     font-size: 1rem;
+    line-height: 1.5;
   }
   
-  .popcorn-left, .popcorn-right {
-    animation: none;
+  /* Butoane Like/Dislike */
+  #likeBtn, #dislikeBtn {
+    padding: 0.7rem 1.3rem;
+    font-size: 1.2rem;
+    margin: 0 0.6rem;
   }
+  
+  #likeBtn i, #dislikeBtn i {
+    font-size: 1.2rem;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+  }
+  
+  /* Animații oprite pe mobil 
+  .popcorn {
+    animation: none;
+  }*/
 }
 
 /* ===== ECRAINE MICI (sub 400px) ===== */
