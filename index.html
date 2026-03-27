@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Film Finder</title>
+    <title>Film Finder | Dumitru Craciun</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&family=Fredoka+One&family=Questrial&family=Staatliches&display=swap" rel="stylesheet">
@@ -12,22 +12,34 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <header>
-      <h1 id="appTitle">🍿Film Finder🍿</h1>
-    </header>
-    <form id="genreForm">
-      <label>Choose a genre:</label>
-      <select name="genres" id="genres">
-      </select>
-    </form>
-    <button id="playBtn">Let's Play!</button>
-    <div id="movieInfo">
-      <div id="moviePoster"></div>
-      <div id="movieText"></div>
-    </div>
-    <div id="likeOrDislikeBtns" hidden>
-      <button id="likeBtn"><i class="fa-solid fa-thumbs-up"></i></button>
-      <button id="dislikeBtn"><i class="fa-solid fa-thumbs-down"></i></button>
-    </div>
+    <main>
+      <h1 id="appTitle">
+      <span class="popcorn">🍿</span> 
+      <span class="title-text">Film Finder</span> 
+      <span class="popcorn">🍿</span>
+    </h1>
+      <p class="subtitle">Discover random movies by genre — powered by TMDB</p>
+
+      <div class="finder-container">
+        <form id="genreForm">
+          <label for="genres">Choose a genre:</label>
+          <select name="genres" id="genres"></select>
+        </form>
+        <button id="playBtn">Let's Play!</button>
+      </div>
+
+      <div id="movieInfo">
+        <div id="moviePoster"></div>
+        <div id="movieText"></div>
+      </div>
+      <div id="likeOrDislikeBtns" hidden>
+        <button id="likeBtn"><i class="fa-solid fa-thumbs-up"></i></button>
+        <button id="dislikeBtn"><i class="fa-solid fa-thumbs-down"></i></button>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Dumitru Craciun | Built with HTML, CSS, JavaScript & TMDB API</p>
+    </footer>
   </body>
 </html>

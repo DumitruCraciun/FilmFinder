@@ -1,97 +1,267 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #7f0920;
-    color: #0a0408;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  font-family: 'Questrial', sans-serif;
+  color: #FEFBEA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
+main {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== TITLU CU POPCORN ===== */
 #appTitle {
-    text-align: center;
-    margin: 0px auto;
-    display: block;
-    font-family: 'Staatliches', sans-serif;
-    font-size: 80px;
+  text-align: center;
+  font-family: 'Staatliches', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-#genreForm, #playBtn {
-    text-align: center;
-    margin: 0px auto;
-    display: block;
-    font-family: 'Fredoka One', sans-serif;
+.title-text {
+  background: linear-gradient(135deg, #fdc238, #b97828);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-#movieInfo {
-    width:  65%;
-    margin:  32px auto;
+.popcorn {
+  font-size: clamp(2rem, 6vw, 4rem);
+  display: inline-block;
+  animation: bounce 1s ease infinite;
+  /* Culorile naturale ale emoji-ului rămân */
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: inherit;
 }
 
-#movieInfo:after {
-    content:  "";
-    display:  table;
-    clear:  both;
+.popcorn:first-child {
+  animation-delay: 0s;
 }
 
-#moviePoster, #movieText {
-    width:  50%;
-    float:  left;
+.popcorn:last-child {
+  animation-delay: 0.5s;
 }
 
-img#moviePoster {
-    width:  100%;
-    height:  auto;
-    display:  block;
-    margin:  auto;
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
-#movieText {
-    font-family: 'Questrial';
-    color: #FEFBEA;
-    line-height: 1.25;
+.subtitle {
+  text-align: center;
+  color: #a0aec0;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
 }
 
-#movieTitle, #movieOverview {
-    padding:  32px;
-}
-
-#playBtn {
-    margin-top: 20px;
-    font-size: 25px;
-    padding: 7px 10px;
-    border-radius: 10px;
-    border-style: none;
-    background-color: #B97828;
-    color: #fdc238;
-    cursor:  pointer;
+/* ===== FORMULAR ===== */
+.finder-container {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1rem;
 }
 
 label {
-    display: block;
-    font-size: 35px;
-    margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: #e2e8f0;
 }
 
 select {
-    width: 200px;
-    height: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: #2d3748;
+  color: white;
+  cursor: pointer;
 }
 
+#playBtn {
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#playBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* ===== CARD FILM (poza stânga, text dreapta) ===== */
+#movieInfo {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin: 1rem 0;
+}
+
+#moviePoster {
+  flex: 0 0 240px;
+}
+
+img#moviePoster {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#movieText {
+  flex: 1;
+  min-width: 200px;
+}
+
+#movieTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #fdc238;
+  font-weight: bold;
+}
+
+#movieOverview {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+
+/* ===== BUTOANE LIKE/DISLIKE ===== */
 #likeOrDislikeBtns {
-    text-align: center;
-    margin: 0px auto;  
+  text-align: center;
+  margin: 1rem auto;
 }
 
 #likeBtn, #dislikeBtn {
-    padding: 15px 25px;
-    font-size: 25px;
-    border-radius: 12px;
-    border-style: none;
-    cursor:  pointer;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: transform 0.2s;
 }
 
 #likeBtn {
-    background-color: #249e57;
-    color: darkgreen;
+  background-color: #249e57;
+  color: white;
+}
+
+#likeBtn:hover {
+  transform: scale(1.05);
 }
 
 #dislikeBtn {
-    background-color: #c74a4a;
-    color: #910000;
+  background-color: #c74a4a;
+  color: white;
+}
+
+#dislikeBtn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #a0aec0;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* ===== RESPONSIVE (telefon) ===== */
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+  
+  #movieInfo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  #moviePoster {
+    flex: 0 0 auto;
+    max-width: 200px;
+  }
+  
+  #movieText {
+    text-align: center;
+  }
+  
+  .finder-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  select, #playBtn {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  #likeBtn, #dislikeBtn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .popcorn-left, .popcorn-right {
+    animation: none;
+  }
+}
+
+/* ===== ECRAINE MICI (sub 400px) ===== */
+@media (max-width: 400px) {
+  .subtitle {
+    font-size: 0.8rem;
+  }
+  
+  #movieTitle {
+    font-size: 1.2rem;
+  }
+  
+  #movieOverview {
+    font-size: 0.85rem;
+  }
+  
+  footer p {
+    font-size: 0.7rem;
+  }
 }
