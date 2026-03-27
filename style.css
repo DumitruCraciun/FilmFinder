@@ -219,7 +219,7 @@ footer {
   }
   
   .subtitle {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-bottom: 1.5rem;
   }
   
@@ -231,6 +231,7 @@ footer {
   
   label {
     font-size: 1.1rem;
+    margin-bottom: 0.3rem;
   }
   
   select {
@@ -280,11 +281,12 @@ footer {
 /* ===== ECRAINE FOARTE MICI (sub 400px) ===== */
 @media (max-width: 400px) {
   .subtitle {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
   
   label {
     font-size: 1rem;
+    margin-bottom: 0.3rem;
   }
   
   select {
